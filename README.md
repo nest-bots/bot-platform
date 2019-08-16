@@ -13,3 +13,51 @@
 </p>
 <p align="center">
 </p>
+
+### Usage
+
+> This module has to be used with one of the (not yet) supplied framework wrappers to be useful. The specific usage of these modules will be explained in the relevant README.md files. 
+
+In general, every module can be used with a specific Bot Instance (supplied by the framework wrappers) and a framework-specific configuration:
+
+```typescript
+@Module({
+  imports: [BotModule.forRoot(BotInstance /* e.g. DiscordBot */, {
+    // Some Framework specific configuration details
+  })],
+})
+```
+
+```typescript
+@Module({
+  imports: [BotModule.forRootAsync(BotInstance /* e.g. DiscordBot */, {
+    useFactory: async (configService: ConfigService) => {
+      return { 
+        // Some Framework specific configuration details using the ConfigService
+      };
+    inject: [ConfigService]
+  })],
+})
+```
+
+### Registering Events
+
+> Make sure that all EventHandler classes are registered as providers
+
+All events are registered using the `@Bot.Event` Decorator. The first parameter should be the framework-specific Bot Instance, the second always specifies the type of event; all events are listen in the Events enum of the Instance.
+
+```typescript
+@Injectable()
+@Bot.Event(BotInstance /* e.g. DiscordBot */, BotInstance.Events.Message)
+export class MessageEvent implements BotEventHandler<BotInstance> {
+
+    constructor() {}
+
+    handle(...args: any[]) {
+
+    }
+
+}
+```
+
+The arguments of the handle-function are determined by the kind of event as well as the framework. The first parameter is always the framework-specific Client Instance
