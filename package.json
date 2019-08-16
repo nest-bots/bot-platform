@@ -9,17 +9,14 @@
     "@nestjs-plus/discovery": "^2.0.1",
     "@nestjs/common": "^6.5.3",
     "@nestjs/core": "^6.5.3",
-    "@nestjs/microservices": "^6.5.3",
     "data-tree": "^1.2.4",
     "lodash": "^4.17.15",
-    "nats": "^1.3.0",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^6.5.2",
     "uuid": "^3.3.2"
   },
   "devDependencies": {
     "@types/node": "^12.7.2",
-    "@types/uuid": "^3.4.5",
-    "discord.js": "^11.5.1"
+    "@types/uuid": "^3.4.5"
   }
 }
