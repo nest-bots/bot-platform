@@ -1,7 +1,7 @@
 # NestJS Bot Platform
 
 <p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo_text.svg" width="320" alt="Nest Logo" /></a><img src="https://cdn.pixabay.com/photo/2016/12/21/17/11/signe-1923369_960_720.png" alt="plus" width="100"> <a href="https://telegram.org" target="blank"><img src="https://upload.wikimedia.org/wikipedia/commons/d/d8/Big-bot-icon.svg" width ="140" alt="Robot Icon"/></a>
+  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo_text.svg" width="320" alt="Nest Logo" /></a><img src="https://cdn.pixabay.com/photo/2016/12/21/17/11/signe-1923369_960_720.png" alt="plus" width="100"><img src="https://upload.wikimedia.org/wikipedia/commons/d/d8/Big-bot-icon.svg" width ="140" alt="Robot Icon"/>
 </p>
 
 <h1 align="center">A <a href="http://nestjs.com" target="blank">NestJS</a> service wrapper for different JavaScript bot frameworks!
