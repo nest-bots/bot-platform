@@ -1,1 +1,1 @@
-# platform-bot
+# NestJS Bot Platform
