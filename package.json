@@ -2,7 +2,7 @@
   "name": "@nest-bots/bot-pltform",
   "version": "1.0.0",
   "main": "dist/index.js",
-  "repository": "git@github.com:nest-bots/platform-bot.git",
+  "repository": "git@github.com:nest-bots/bot-platform.git",
   "author": "Pascal K.",
   "license": "MIT",
   "dependencies": {
