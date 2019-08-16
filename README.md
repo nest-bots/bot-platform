@@ -44,7 +44,7 @@ In general, every module can be used with a specific Bot Instance (supplied by t
 
 > Make sure that all EventHandler classes are registered as providers
 
-All events are registered using the `@Bot.Event` Decorator. The first parameter should be the framework-specific Bot Instance, the second always specifies the type of event; all events are listen in the Events enum of the Instance.
+All events are registered using the `@Bot.Event` Decorator. The first parameter should be the framework-specific Bot Instance, the second always specifies the type of event; all events are listed in the Events enum of the Instance.
 
 ```typescript
 @Injectable()
@@ -60,4 +60,47 @@ export class MessageEvent implements BotEventHandler<BotInstance> {
 }
 ```
 
-The arguments of the handle-function are determined by the kind of event as well as the framework. The first parameter is always the framework-specific Client Instance
+The arguments of the `handle`-function are determined by the kind of event as well as the framework. The first parameter is always the framework-specific Client Instance. Dependency injection can by used normally.
+
+### Registering Commands
+
+> Make sure that all CommandHandler classes are registered as providers
+
+All events are registered using the `@Bot` Decorator as well as the `@Bot.Command` Decorator. Using the `@Bot.CommandAlias` Decorator different aliases of the command can be defined.
+
+```typescript
+@Bot()
+@Bot.Command('test')
+@Bot.CommandAlias('testing')
+export class TestCommand extends BotCommandHandler {
+
+    handle(...args: any[]): void {
+
+    }
+
+}
+```
+
+The CommandHandler-interface is supplied by the framework-wrapper. The arguments of the `handle`-function are entirely dependant on the framework wrapper as well and will be described in the relevant README.md files. 
+
+#### Sub-Commands
+
+By setting the `@Bot.CommandParent` Decorator you can define a Sub-Command, that will be saved accordingly in the Command-Tree. The passed argument must be a Type refering to the parent command:
+
+```typescript
+@Bot()
+@Bot.Command('something')
+@Bot.CommandAlias('anything')
+@Bot.CommandParent(TestCommand)
+export class TestSomethingCommand extends BotCommandHandler {
+
+    handle(...args: any[]): void {
+
+    }
+
+}
+```
+
+#### Command Handlers
+
+By default there are no command-handler included, that detect the usage of commands in the messages. These have to be created manually. The `findCommand`-Method of the `BotCommandService` can be used to detect the usage of commands. By passing the Command-Elements as a `string[]` (usually the message content split at every space), the method will traverse the `CommandTree` and return either a `CommandResult` or null, dependant on weather a suitable command was found or not. The `CommandResult`-Object contains the instance of the CommandHandler, the remaining arguments less the command parts itself and the length of Tree-Path found. (TODO: Clarify how the Command-Tree works).
