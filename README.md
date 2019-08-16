@@ -103,4 +103,9 @@ export class TestSomethingCommand extends BotCommandHandler {
 
 #### Command Handlers
 
-By default there are no command-handler included, that detect the usage of commands in the messages. These have to be created manually. The `findCommand`-Method of the `BotCommandService` can be used to detect the usage of commands. By passing the Command-Elements as a `string[]` (usually the message content split at every space), the method will traverse the `CommandTree` and return either a `CommandResult` or null, dependant on weather a suitable command was found or not. The `CommandResult`-Object contains the instance of the CommandHandler, the remaining arguments less the command parts itself and the length of Tree-Path found. (TODO: Clarify how the Command-Tree works).
+By default there are no command-handler included, that detect the usage of commands in the messages. These have to be created manually. The `findCommand`-Method of the `BotCommandService` can be used to detect the usage of commands. By passing the Command-Elements as a `string[]` (usually the message content split at every space), the method will traverse the `CommandTree` and return either a `CommandResult` or null, dependant on weather a suitable command was found or not. The `CommandResult`-Object contains the instance of the CommandHandler, the remaining arguments less the command parts itself and the length of Tree-Path found. 
+
+#### TODO
+
+- [ ] Clarify how the Command-Tree works
+- [ ] Actually create some Framework Wrappers
