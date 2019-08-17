@@ -180,6 +180,4 @@ modules.xml
 
 # End of https://www.gitignore.io/api/node,webstorm+all
 
-test/
-src/discord/
 dist/
