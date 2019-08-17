@@ -16,7 +16,7 @@
 
 ### Usage
 
-> This module has to be used with one of the (not yet) supplied framework wrappers to be useful. The specific usage of these modules will be explained in the relevant README.md files. 
+> This module has to be used with one of the supplied framework wrappers to be useful. The specific usage of these modules will be explained in the relevant README.md files. 
 
 In general, every module can be used with a specific Bot Instance (supplied by the framework wrappers) and a framework-specific configuration:
 
@@ -105,7 +105,12 @@ export class TestSomethingCommand extends BotCommandHandler {
 
 By default there are no command-handler included, that detect the usage of commands in the messages. These have to be created manually. The `findCommand`-Method of the `BotCommandService` can be used to detect the usage of commands. By passing the Command-Elements as a `string[]` (usually the message content split at every space), the method will traverse the `CommandTree` and return either a `CommandResult` or null, dependant on weather a suitable command was found or not. The `CommandResult`-Object contains the instance of the CommandHandler, the remaining arguments less the command parts itself and the length of Tree-Path found. 
 
+### Available Framework-Wrappers
+
+- [Discord.JS](https://github.com/nest-bots/framework-discord)
+
 #### TODO
 
 - [ ] Clarify how the Command-Tree works
-- [ ] Actually create some Framework Wrappers
+- [ ] Create some more Framework Wrappers
+- [ ] Discord sharding
