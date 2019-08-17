@@ -182,3 +182,4 @@ modules.xml
 
 test/
 src/discord/
+dist/
