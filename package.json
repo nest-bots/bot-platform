@@ -6,7 +6,7 @@
   "author": "Pascal K.",
   "license": "MIT",
   "dependencies": {
-    "@nestjs-plus/discovery": "^2.0.1",
+    "@nestjs-plus/discovery": "^2.0.2",
     "@nestjs/common": "^6.5.3",
     "@nestjs/core": "^6.5.3",
     "data-tree": "^1.2.4",
