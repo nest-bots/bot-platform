@@ -8,7 +8,7 @@
   "dependencies": {
     "@nestjs-plus/discovery": "^2.0.1",
     "@nestjs/common": "^6.5.3",
-    "@nestjs/core": "^6.5.3",
+    "@nestjs/core": "^6.8.3",
     "data-tree": "^1.2.4",
     "lodash": "^4.17.15",
     "reflect-metadata": "^0.1.13",
